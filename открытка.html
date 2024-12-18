@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        #card {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        #card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        #greeting {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+    
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 class="t1">Получите свою открытку!</h1>
+            <p class="t2">Введите ваше имя</p>
+            <form id="postcardForm">
+                <input type="text" class="t2" id="FirstName" name="FirstName" placeholder="Ваше имя">
+                <button type="submit">Получить открытку</button>
+            </form>
+            <script>
+                document.getElementById("postcardForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    const name = document.getElementById("FirstName").value;
+                    if (name.trim() !== "") {
+                        window.location.href = "открытка2.html?name=" + encodeURIComponent(name);
+                    } else {
+                        alert("Пожалуйста, введите ваше имя");
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
